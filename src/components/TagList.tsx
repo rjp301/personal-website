@@ -15,7 +15,7 @@ const TagList: React.FC<Props> = (props) => {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <Badge variant="secondary">{tag}</Badge>
+        <div className="badge badge-secondary">{tag}</div>
       ))}
     </div>
   );

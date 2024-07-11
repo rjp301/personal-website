@@ -70,11 +70,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
     font-family: Menlo, monospace;
     line-height: 1.725;
     font-size: 14px;

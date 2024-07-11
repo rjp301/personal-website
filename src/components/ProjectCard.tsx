@@ -24,20 +24,22 @@ const ProjectCard: React.FC<Props> = (props) => {
 
   return (
     <a href={`/projects/${project.slug}`} className="w-full">
-      <Card className="inline-block mb-4 w-full">
-        <CardHeader>
-          <CardTitle className="text-base font-bold justify-between flex gap-2">
+      <div className="card bg-base-200 inline-block mb-4 w-full p-6">
+        <div className="mb-2">
+          <h2 className="text-lg font-bold justify-between flex gap-2">
             {project.data.title}
             {project.data.wip && <WipBadge />}
             {project.data.top3 && <Top3Badge />}
-          </CardTitle>
-          <CardDescription>{formatDate(project.data.date)}</CardDescription>
-        </CardHeader>
-        <CardContent>{project.data.description}</CardContent>
-        <CardFooter>
+          </h2>
+          <p className="text-sm text-neutral-content">
+            {formatDate(project.data.date)}
+          </p>
+        </div>
+        <section className="mb-3">{project.data.description}</section>
+        <footer>
           <TagList tags={project.data.tags} />
-        </CardFooter>
-      </Card>
+        </footer>
+      </div>
     </a>
   );
 };
